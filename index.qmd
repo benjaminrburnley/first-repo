@@ -27,4 +27,16 @@ storms %>%
     plot.title = element_text(size = 16)
   )
 ```
+```{r}
+storms %>% 
+  group_by(year,name) %>% 
+  summarize(cat = max(category)) %>% 
+  ungroup %>% 
+  group_by(year, cat) %>% 
+  summarize(n = n()) %>% 
+  ggplot(aes(year, n, fill = cat))+
+  geom_col(position = "fill")+
+  scale_fill_viridis_d(guide = "none")+
+  theme_void()
+```
 
