@@ -15,8 +15,7 @@ storms %>%
   summarize(canes = n()) %>% 
   ggplot(aes(year, canes))+
   geom_line(color = "darkred")+
-  geom_point()+
-  theme_classic()+
+  theme_minimal()+
   labs(
     title = "Number of Hurricanes per Year",
     x = "Year",
@@ -24,7 +23,8 @@ storms %>%
     caption = "Source: storms dataset"
   )+
   theme(
-    text = element_text(face = "bold")
+    text = element_text(face = "bold"),
+    plot.title = element_text(size = 16)
   )
 ```
 
