@@ -17,7 +17,7 @@ storms %>%
   geom_line(color = "darkred")+
   theme_minimal()+
   labs(
-    title = "Number of Hurricanes per Year",
+    title = "Number of Hurricanes and Tropical Storms per Year",
     x = "Year",
     y = "Total Number of Storms",
     caption = "Source: storms dataset"
@@ -28,6 +28,8 @@ storms %>%
   )
 ```
 ```{r}
+#| message: false
+
 storms %>% 
   group_by(year,name) %>% 
   summarize(cat = max(category)) %>% 
