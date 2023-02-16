@@ -1,5 +1,5 @@
 ---
-title: "My Quarto File"
+title: "some graphs i made"
 format: 
   html:
     self-contained: true
@@ -39,6 +39,9 @@ storms %>%
   ggplot(aes(year, n, fill = cat))+
   geom_col(position = "fill")+
   scale_fill_viridis_d(guide = "none")+
-  theme_void()
+  theme_void()+
+  labs(
+    title = "data that is sad, but made pretty"
+  )
 ```
 
