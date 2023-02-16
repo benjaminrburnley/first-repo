@@ -1,0 +1,29 @@
+---
+title: "My Quarto File"
+format: 
+  html:
+    self-contained: true
+---
+
+```{r}
+#| message: false
+library(tidyverse)
+
+storms %>% 
+  group_by(year) %>% 
+  summarize(storms = unique(name)) %>% 
+  summarize(canes = n()) %>% 
+  ggplot(aes(year, canes))+
+  geom_line(color = "darkred")+
+  theme_bw()+
+  labs(
+    title = "Number of Hurricanes per Year",
+    x = "Year",
+    y = "Total Number of Storms",
+    caption = "Source: storms dataset"
+  )+
+  theme(
+    text = element_text(face = "bold")
+  )
+```
+
